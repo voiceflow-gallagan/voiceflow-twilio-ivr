@@ -1,24 +1,18 @@
 {
   "_version": "1.2",
   "project": {
-    "_id": "655b89f70d07cc60f14ec379",
-    "type": "chat",
+    "_id": "6471e794dacc180006503568",
     "name": "Twilio IVR Demo",
-    "image": "https://cm4-production-assets.s3.amazonaws.com/1685209113014-twilio-logo-png-transparent.png",
-    "teamID": "95kw2a7EOV",
-    "members": [],
-    "privacy": "private",
+    "teamID": "peEqrGWwkD",
+    "devVersion": "6471e79338c303b183e9ef2e",
     "platform": "webchat",
-    "_version": 1.2,
-    "linkType": "STRAIGHT",
-    "creatorID": 3600,
-    "updatedBy": 3600,
-    "updatedAt": "2023-11-20T17:44:53.661Z",
-    "apiPrivacy": "public",
-    "devVersion": "655b89f70d07cc60f14ec37a",
+    "type": "chat",
     "platformData": {
       "invocationName": "template project general"
     },
+    "members": [],
+    "linkType": "STRAIGHT",
+    "image": "https://cm4-production-assets.s3.amazonaws.com/1685209113014-twilio-logo-png-transparent.png",
     "customThemes": [
       {
         "name": "Text",
@@ -37,7 +31,31 @@
         "standardColor": "#cf80c5"
       }
     ],
+    "apiPrivacy": "public",
+    "aiAssistSettings": {
+      "aiPlayground": true
+    },
+    "_version": 1.2,
+    "updatedAt": "2023-05-30T18:56:56.144Z",
+    "creatorID": 3600,
+    "updatedBy": 3600,
     "knowledgeBase": {
+      "documents": {
+        "6471eaafdf06c90007e86c19": {
+          "status": {
+            "type": "SUCCESS"
+          },
+          "data": {
+            "type": "url",
+            "name": "voiceflow.com/about",
+            "url": "https://www.voiceflow.com/about"
+          },
+          "updatedAt": "2023-05-27T11:34:07.437Z",
+          "creatorID": 3600,
+          "documentID": "6471eaafdf06c90007e86c19",
+          "version": 0.2
+        }
+      },
       "settings": {
         "chunkStrategy": {
           "type": "recursive_text_splitter",
@@ -56,17 +74,15 @@
           "system": "You are an FAQ AI chat assistant. Information will be provided to help answer the user's questions. Always summarize your response to be as brief as possible and be extremely concise. Your responses should be fewer than a couple of sentences.",
           "maxTokens": 150
         }
-      },
-      "documents": {}
-    },
-    "aiAssistSettings": {
-      "aiPlayground": true
+      }
     },
     "prototype": {
       "nlp": {
-        "type": "VFNLU"
+        "appID": "bac029e8-a9c9-4eb3-90a5-8b6ba7d96656",
+        "resourceID": "mgkkfkll:https://westus.api.cognitive.microsoft.com/",
+        "type": "LUIS"
       },
-      "lastTrainedTime": 1700499196606,
+      "lastTrainedTime": 1685209562263,
       "trainedModel": {
         "intents": [
           {
@@ -213,17 +229,188 @@
         ]
       }
     },
-    "createdAt": "2023-11-20T16:31:51.000Z"
+    "createdAt": "2023-05-27T11:20:52.000Z"
   },
   "version": {
-    "_id": "655b89f70d07cc60f14ec37a",
+    "_id": "6471e79338c303b183e9ef2e",
+    "variables": [
+      "sessions",
+      "user_id",
+      "timestamp",
+      "platform",
+      "locale"
+    ],
+    "platformData": {
+      "slots": [
+        {
+          "key": "ra1gi37r5",
+          "name": "userName",
+          "type": {
+            "value": "VF.NAME"
+          },
+          "color": "#56b365",
+          "inputs": []
+        }
+      ],
+      "intents": [
+        {
+          "key": "VF.YES",
+          "name": "VF.YES",
+          "inputs": [],
+          "slots": []
+        },
+        {
+          "key": "VF.NO",
+          "name": "VF.NO",
+          "inputs": [],
+          "slots": []
+        },
+        {
+          "key": "yo2f73754",
+          "name": "More Info",
+          "inputs": [
+            {
+              "text": "about voiceflow",
+              "slots": []
+            },
+            {
+              "text": "more info",
+              "slots": []
+            }
+          ],
+          "slots": []
+        },
+        {
+          "key": "0a2hi37ir",
+          "name": "Ask a Question",
+          "inputs": [
+            {
+              "text": "answer my question",
+              "slots": []
+            },
+            {
+              "text": "I have a question",
+              "slots": []
+            },
+            {
+              "text": "ask a question",
+              "slots": []
+            }
+          ],
+          "slots": []
+        },
+        {
+          "key": "hr2k837o1",
+          "name": "Coupon",
+          "inputs": [
+            {
+              "text": "coupon",
+              "slots": []
+            },
+            {
+              "text": "I want a coupon",
+              "slots": []
+            },
+            {
+              "text": "get a coupon",
+              "slots": []
+            }
+          ],
+          "slots": []
+        },
+        {
+          "key": "w22mp37qh",
+          "name": "Call Team",
+          "inputs": [
+            {
+              "text": "call",
+              "slots": []
+            },
+            {
+              "text": "contact someone",
+              "slots": []
+            },
+            {
+              "text": "talk to the team",
+              "slots": []
+            },
+            {
+              "text": "talk to our team",
+              "slots": []
+            }
+          ],
+          "slots": []
+        },
+        {
+          "key": "VF.STOP",
+          "name": "VF.STOP",
+          "inputs": [
+            {
+              "text": "bye",
+              "slots": []
+            },
+            {
+              "text": "hang up",
+              "slots": []
+            },
+            {
+              "text": "good bye",
+              "slots": []
+            },
+            {
+              "text": "end call",
+              "slots": []
+            },
+            {
+              "text": "terminate",
+              "slots": []
+            }
+          ],
+          "slots": []
+        },
+        {
+          "key": "None",
+          "name": "None",
+          "inputs": [],
+          "slots": []
+        }
+      ],
+      "settings": {
+        "restart": true,
+        "repeat": 100,
+        "locales": [
+          "en-US"
+        ]
+      },
+      "publishing": {
+        "avatar": "https://cdn.voiceflow.com/assets/logo.png",
+        "color": "#2E7FF1",
+        "description": "Our virtual assistant is here to help you.",
+        "image": "https://cdn.voiceflow.com/assets/logo.png",
+        "persistence": "localStorage",
+        "position": "right",
+        "spacing": {
+          "side": 24,
+          "bottom": 24
+        },
+        "title": "Twilio IVR Demo",
+        "watermark": true
+      },
+      "platform": "webchat"
+    },
+    "_version": 4.07,
     "name": "Initial Version",
+    "projectID": "6471e794dacc180006503568",
+    "manualSave": false,
+    "autoSaveFromRestore": false,
     "topics": [
       {
         "sourceID": "6471e79438c303b183e9ef2f",
         "type": "DIAGRAM"
       }
     ],
+    "components": [],
+    "rootDiagramID": "6471e79438c303b183e9ef2f",
     "domains": [
       {
         "id": "cla06iyr900b206pkh8d4ap8n",
@@ -233,13 +420,46 @@
           "6471e79438c303b183e9ef2f"
         ],
         "rootDiagramID": "6471e79438c303b183e9ef2f",
-        "updatedAt": "2023-11-20T17:44:53.661Z",
+        "updatedAt": "2023-05-30T18:56:56.146Z",
         "updatedBy": 3600
       }
     ],
-    "_version": 4.07,
+    "canvasTemplates": [
+      {
+        "id": "sg9zy34i0",
+        "name": "Basic Conversation Path",
+        "color": "#5b9fd7",
+        "nodeIDs": [
+          "643872d482cf9d2273b905df",
+          "643872d482cf9d2273b905e1",
+          "643872d482cf9d2273b905e3"
+        ]
+      },
+      {
+        "id": "5bgq3341p",
+        "name": "Save Information",
+        "color": "#000000",
+        "nodeIDs": [
+          "6438784f82cf9d2273b90dd4",
+          "6438784f82cf9d2273b90dd6",
+          "6438784f82cf9d2273b90dd8",
+          "6438784f82cf9d2273b90dda"
+        ]
+      },
+      {
+        "id": "byav33785",
+        "name": "API Call Example",
+        "color": null,
+        "nodeIDs": [
+          "645d718f83103cca7a3cecc1",
+          "645d718f83103cca7a3cecc3",
+          "645d718f83103cca7a3cecc5",
+          "645d718f83103cca7a3cecc7"
+        ]
+      }
+    ],
     "creatorID": 3600,
-    "projectID": "655b89f70d07cc60f14ec379",
+    "templateDiagramID": "6471e79438c303b183e9ef30",
     "prototype": {
       "type": "chat",
       "data": {
@@ -379,6 +599,16 @@
                 }
               }
             ]
+          },
+          {
+            "key": "None",
+            "name": "None",
+            "inputs": [
+              {
+                "text": "None"
+              }
+            ],
+            "slots": []
           }
         ],
         "slots": [
@@ -460,207 +690,7 @@
       },
       "settings": {},
       "platform": "webchat"
-    },
-    "variables": [
-      "sessions",
-      "user_id",
-      "timestamp",
-      "platform",
-      "locale",
-      "payload"
-    ],
-    "components": [],
-    "manualSave": false,
-    "platformData": {
-      "slots": [
-        {
-          "key": "ra1gi37r5",
-          "name": "userName",
-          "type": {
-            "value": "VF.NAME"
-          },
-          "color": "#56b365",
-          "inputs": []
-        }
-      ],
-      "intents": [
-        {
-          "key": "VF.YES",
-          "name": "VF.YES",
-          "inputs": [],
-          "slots": []
-        },
-        {
-          "key": "VF.NO",
-          "name": "VF.NO",
-          "inputs": [],
-          "slots": []
-        },
-        {
-          "key": "yo2f73754",
-          "name": "More Info",
-          "inputs": [
-            {
-              "text": "about voiceflow",
-              "slots": []
-            },
-            {
-              "text": "more info",
-              "slots": []
-            }
-          ],
-          "slots": []
-        },
-        {
-          "key": "0a2hi37ir",
-          "name": "Ask a Question",
-          "inputs": [
-            {
-              "text": "answer my question",
-              "slots": []
-            },
-            {
-              "text": "I have a question",
-              "slots": []
-            },
-            {
-              "text": "ask a question",
-              "slots": []
-            }
-          ],
-          "slots": []
-        },
-        {
-          "key": "hr2k837o1",
-          "name": "Coupon",
-          "inputs": [
-            {
-              "text": "coupon",
-              "slots": []
-            },
-            {
-              "text": "I want a coupon",
-              "slots": []
-            },
-            {
-              "text": "get a coupon",
-              "slots": []
-            }
-          ],
-          "slots": []
-        },
-        {
-          "key": "w22mp37qh",
-          "name": "Call Team",
-          "inputs": [
-            {
-              "text": "call",
-              "slots": []
-            },
-            {
-              "text": "contact someone",
-              "slots": []
-            },
-            {
-              "text": "talk to the team",
-              "slots": []
-            },
-            {
-              "text": "talk to our team",
-              "slots": []
-            }
-          ],
-          "slots": []
-        },
-        {
-          "key": "VF.STOP",
-          "name": "VF.STOP",
-          "inputs": [
-            {
-              "text": "bye",
-              "slots": []
-            },
-            {
-              "text": "hang up",
-              "slots": []
-            },
-            {
-              "text": "good bye",
-              "slots": []
-            },
-            {
-              "text": "end call",
-              "slots": []
-            },
-            {
-              "text": "terminate",
-              "slots": []
-            }
-          ],
-          "slots": []
-        }
-      ],
-      "settings": {
-        "restart": true,
-        "repeat": 100,
-        "locales": [
-          "en-US"
-        ]
-      },
-      "publishing": {
-        "avatar": "https://cdn.voiceflow.com/assets/logo.png",
-        "color": "#2E7FF1",
-        "description": "Our virtual assistant is here to help you.",
-        "image": "https://cdn.voiceflow.com/assets/logo.png",
-        "persistence": "localStorage",
-        "position": "right",
-        "spacing": {
-          "side": 24,
-          "bottom": 24
-        },
-        "title": "Twilio IVR Demo",
-        "watermark": true,
-        "feedback": false
-      },
-      "platform": "webchat"
-    },
-    "rootDiagramID": "6471e79438c303b183e9ef2f",
-    "canvasTemplates": [
-      {
-        "id": "sg9zy34i0",
-        "name": "Basic Conversation Path",
-        "color": "#5b9fd7",
-        "nodeIDs": [
-          "643872d482cf9d2273b905df",
-          "643872d482cf9d2273b905e1",
-          "643872d482cf9d2273b905e3"
-        ]
-      },
-      {
-        "id": "5bgq3341p",
-        "name": "Save Information",
-        "color": "#000000",
-        "nodeIDs": [
-          "6438784f82cf9d2273b90dd4",
-          "6438784f82cf9d2273b90dd6",
-          "6438784f82cf9d2273b90dd8",
-          "6438784f82cf9d2273b90dda"
-        ]
-      },
-      {
-        "id": "byav33785",
-        "name": "API Call Example",
-        "color": null,
-        "nodeIDs": [
-          "645d718f83103cca7a3cecc1",
-          "645d718f83103cca7a3cecc3",
-          "645d718f83103cca7a3cecc5",
-          "645d718f83103cca7a3cecc7"
-        ]
-      }
-    ],
-    "templateDiagramID": "6471e79438c303b183e9ef30",
-    "autoSaveFromRestore": false
+    }
   },
   "diagrams": {
     "6471e79438c303b183e9ef30": {
@@ -668,6 +698,13 @@
       "name": "Template Diagram",
       "type": "TEMPLATE",
       "zoom": 100,
+      "offsetX": 272,
+      "offsetY": 104,
+      "modified": 1685186452,
+      "variables": [],
+      "menuItems": [],
+      "creatorID": 3600,
+      "versionID": "6471e79338c303b183e9ef2e",
       "nodes": {
         "6438725334aead00076d562e": {
           "type": "start",
@@ -3772,20 +3809,47 @@
           "nodeID": "645d718f83103cca7a3cecd7"
         }
       },
-      "offsetX": 272,
-      "offsetY": 104,
-      "modified": 1685186452,
-      "diagramID": "6471e79438c303b183e9ef30",
-      "versionID": "655b89f70d07cc60f14ec37a",
-      "creatorID": 3600,
-      "variables": [],
-      "menuItems": []
+      "diagramID": "6471e79438c303b183e9ef30"
     },
     "6471e79438c303b183e9ef2f": {
       "_id": "6471e79438c303b183e9ef2f",
-      "name": "ROOT",
-      "type": "TOPIC",
+      "offsetX": 660.3784532606145,
+      "offsetY": 781.3489202677721,
       "zoom": 100,
+      "variables": [],
+      "name": "ROOT",
+      "versionID": "6471e79338c303b183e9ef2e",
+      "creatorID": 3600,
+      "modified": 1685186452,
+      "intentStepIDs": [],
+      "type": "TOPIC",
+      "menuNodeIDs": [],
+      "menuItems": [
+        {
+          "type": "NODE",
+          "sourceID": "start00000000000000000000"
+        },
+        {
+          "type": "NODE",
+          "sourceID": "6471ebc4fe941ecf23ac0d6d"
+        },
+        {
+          "type": "NODE",
+          "sourceID": "6471ebe4fe941ecf23ac0d74"
+        },
+        {
+          "type": "NODE",
+          "sourceID": "6471ec35fe941ecf23ac0d7b"
+        },
+        {
+          "type": "NODE",
+          "sourceID": "6471ec55fe941ecf23ac0d82"
+        },
+        {
+          "type": "NODE",
+          "sourceID": "6472402cfe941ecf23ac0f89"
+        }
+      ],
       "nodes": {
         "start00000000000000000000": {
           "nodeID": "start00000000000000000000",
@@ -4750,9 +4814,7 @@
             "payload": {
               "name": "DTMF",
               "body": "",
-              "bodyType": "text",
-              "scope": "local",
-              "isBlocking": true
+              "isBlocking": false
             },
             "defaultPath": 0,
             "portsV2": {
@@ -5133,7 +5195,9 @@
             ],
             "payload": {
               "name": "SMS",
-              "body": "{\n\"message\":\"Hi {user_id}! You can redeem the coupon 'FREEDEMO' to get 1 month of Pro feature on us. Enjoy!\"\n}",
+              "body": "{\n\"message\":\"Hi! You can redeem the coupon 'FREEDEMO' to get 1 month of Pro feature on us. Enjoy!\"\n}",
+              "bodyType": "text",
+              "scope": "local",
               "isBlocking": false
             },
             "defaultPath": 0,
@@ -5562,41 +5626,7 @@
           "nodeID": "64724119fe941ecf23ac0fa4"
         }
       },
-      "offsetX": 660.3784532606145,
-      "offsetY": 781.3489202677721,
-      "modified": 1685186452,
-      "diagramID": "6471e79438c303b183e9ef2f",
-      "versionID": "655b89f70d07cc60f14ec37a",
-      "creatorID": 3600,
-      "variables": [],
-      "menuItems": [
-        {
-          "type": "NODE",
-          "sourceID": "start00000000000000000000"
-        },
-        {
-          "type": "NODE",
-          "sourceID": "6471ebc4fe941ecf23ac0d6d"
-        },
-        {
-          "type": "NODE",
-          "sourceID": "6471ebe4fe941ecf23ac0d74"
-        },
-        {
-          "type": "NODE",
-          "sourceID": "6471ec35fe941ecf23ac0d7b"
-        },
-        {
-          "type": "NODE",
-          "sourceID": "6471ec55fe941ecf23ac0d82"
-        },
-        {
-          "type": "NODE",
-          "sourceID": "6472402cfe941ecf23ac0f89"
-        }
-      ],
-      "menuNodeIDs": [],
-      "intentStepIDs": []
+      "diagramID": "6471e79438c303b183e9ef2f"
     }
   },
   "variableStates": []

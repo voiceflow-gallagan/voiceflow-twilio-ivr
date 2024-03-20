@@ -150,7 +150,7 @@ Do not forget to **save** your configuration
 ## Testing
 
 You’re now ready!
-You can import the Twilio_IVR_Demo-2023-11-20_18-45.vf file in Voiceflow to test it.
+You can import the Twilio_IVR_Demo-2023-11-21_15-55.vf file in Voiceflow to test it.
 Simply call your **Twilio number** and start interacting with your Assistant.
 
 

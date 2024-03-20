@@ -1,4 +1,7 @@
 require('dotenv').config()
+const fs = require('fs')
+const path = require('path')
+
 const {
   VOICEFLOW_API_KEY,
   TWILIO_PHONE_NUMBER,
@@ -31,15 +34,21 @@ async function interact(caller, action) {
     ['CALL', 'end'].includes(trace.type)
   )
 
+  // Select the best model for your use case
+  // https://www.twilio.com/docs/voice/twiml/gather#speechmodel
+
   let agent = endTurn
     ? twiml
     : twiml.gather({
-        input: 'speech dtmf',
+        input: 'speech dtmf', // 'speech',
         numDigits: 1,
-        speechTimeout: 'auto',
         action: '/ivr/interaction',
         profanityFilter: false,
-        actionOnEmptyResult: true,
+        actionOnEmptyResult: false,
+        speechModel: 'phone_call', // 'experimental_utterances', 'experimental_conversations', ...
+        enhanced: false,
+        speechTimeout: 'auto',
+        language: 'en-US',
         method: 'POST',
       })
 
@@ -48,7 +57,33 @@ async function interact(caller, action) {
     switch (trace.type) {
       case 'text':
       case 'speak': {
-        agent.say(trace.payload.message)
+        if (trace.payload?.type == 'audio') {
+          if (trace.payload.src.startsWith('data:')) {
+            // Generate a unique temporary file name
+            const tempFileName = `temp-${Date.now()}.mp3`
+            const tempFilePath = path.join(process.cwd(), 'tmp', tempFileName)
+
+            // Create the 'tmp' directory if it doesn't exist
+            const tempDir = path.join(process.cwd(), 'tmp')
+            if (!fs.existsSync(tempDir)) {
+              fs.mkdirSync(tempDir)
+            }
+
+            // Extract the base64-encoded audio data from the data URI
+            const base64Data = trace.payload.src.split(',')[1]
+
+            // Write the base64-encoded data to the temporary file
+            fs.writeFileSync(tempFilePath, base64Data, 'base64')
+
+            // Use the temporary file path with agent.play()
+            const audioUrl = `${process.env.BASE_URL}/ivr/audio/${tempFileName}`
+            agent.play(audioUrl)
+          } else {
+            agent.play(trace.payload.src)
+          }
+        } else {
+          agent.say(trace.payload.message)
+        }
         break
       }
       case 'CALL': {
@@ -96,8 +131,6 @@ exports.interaction = async (called, caller, query = '', digit = null) => {
     action = { type: `${digit}` }
     console.log('Digit:', digit)
   } else {
-    // twilio always ends everythings with a period, we remove it
-    query = query.slice(0, -1)
     action = query.trim() ? { type: 'text', payload: query } : null
     console.log('Utterance:', query)
   }

@@ -1,3 +1,4 @@
+const path = require('path')
 const Router = require('express').Router
 const { launch, interaction, dial } = require('./handler')
 
@@ -11,6 +12,13 @@ router.post('/interaction', async (req, res) => {
 router.post('/launch', async (req, res) => {
   const { Called, Caller } = req.body
   res.send(await launch(Called, Caller))
+})
+
+// Add a new endpoint to serve audio files
+router.get('/audio/:filename', (req, res) => {
+  const { filename } = req.params
+  const filePath = path.join(process.cwd(), 'tmp', filename)
+  res.sendFile(filePath)
 })
 
 module.exports = router
