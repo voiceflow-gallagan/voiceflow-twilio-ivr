@@ -1,238 +1,5 @@
 {
-  "_version": "1.2",
-  "project": {
-    "_id": "6471e794dacc180006503568",
-    "name": "Twilio IVR Demo",
-    "teamID": "peEqrGWwkD",
-    "devVersion": "6471e79338c303b183e9ef2e",
-    "platform": "webchat",
-    "type": "chat",
-    "platformData": {
-      "invocationName": "template project general"
-    },
-    "members": [],
-    "linkType": "STRAIGHT",
-    "image": "https://cm4-production-assets.s3.amazonaws.com/1685209113014-twilio-logo-png-transparent.png",
-    "customThemes": [
-      {
-        "name": "Text",
-        "palette": {
-          "50": "#f6eaf5",
-          "100": "#f1ddee",
-          "200": "#eacbe6",
-          "300": "#e4bade",
-          "400": "#d99dd1",
-          "500": "#cf80c5",
-          "600": "#ba66af",
-          "700": "#94508b",
-          "800": "#6c3966",
-          "900": "#442240"
-        },
-        "standardColor": "#cf80c5"
-      }
-    ],
-    "apiPrivacy": "public",
-    "aiAssistSettings": {
-      "aiPlayground": true
-    },
-    "_version": 1.2,
-    "updatedAt": "2023-05-30T18:56:56.144Z",
-    "creatorID": 3600,
-    "updatedBy": 3600,
-    "knowledgeBase": {
-      "documents": {
-        "6471eaafdf06c90007e86c19": {
-          "status": {
-            "type": "SUCCESS"
-          },
-          "data": {
-            "type": "url",
-            "name": "voiceflow.com/about",
-            "url": "https://www.voiceflow.com/about"
-          },
-          "updatedAt": "2023-05-27T11:34:07.437Z",
-          "creatorID": 3600,
-          "documentID": "6471eaafdf06c90007e86c19",
-          "version": 0.2
-        }
-      },
-      "settings": {
-        "chunkStrategy": {
-          "type": "recursive_text_splitter",
-          "size": 1200,
-          "overlap": 200
-        },
-        "search": {
-          "limit": 3,
-          "metric": "IP"
-        },
-        "summarization": {
-          "prompt": "",
-          "mode": "prompt",
-          "model": "gpt-3.5-turbo",
-          "temperature": 0.1,
-          "system": "You are an FAQ AI chat assistant. Information will be provided to help answer the user's questions. Always summarize your response to be as brief as possible and be extremely concise. Your responses should be fewer than a couple of sentences.",
-          "maxTokens": 150
-        }
-      }
-    },
-    "prototype": {
-      "nlp": {
-        "appID": "bac029e8-a9c9-4eb3-90a5-8b6ba7d96656",
-        "resourceID": "mgkkfkll:https://westus.api.cognitive.microsoft.com/",
-        "type": "LUIS"
-      },
-      "lastTrainedTime": 1685209562263,
-      "trainedModel": {
-        "intents": [
-          {
-            "key": "yo2f73754",
-            "name": "More Info",
-            "inputs": [
-              {
-                "text": "about voiceflow",
-                "slots": []
-              },
-              {
-                "text": "more info",
-                "slots": []
-              }
-            ],
-            "slots": []
-          },
-          {
-            "key": "0a2hi37ir",
-            "name": "Ask a Question",
-            "inputs": [
-              {
-                "text": "answer my question",
-                "slots": []
-              },
-              {
-                "text": "I have a question",
-                "slots": []
-              },
-              {
-                "text": "ask a question",
-                "slots": []
-              }
-            ],
-            "slots": []
-          },
-          {
-            "key": "hr2k837o1",
-            "name": "Coupon",
-            "inputs": [
-              {
-                "text": "coupon",
-                "slots": []
-              },
-              {
-                "text": "I want a coupon",
-                "slots": []
-              },
-              {
-                "text": "get a coupon",
-                "slots": []
-              }
-            ],
-            "slots": []
-          },
-          {
-            "key": "w22mp37qh",
-            "name": "Call Team",
-            "inputs": [
-              {
-                "text": "call",
-                "slots": []
-              },
-              {
-                "text": "contact someone",
-                "slots": []
-              },
-              {
-                "text": "talk to the team",
-                "slots": []
-              },
-              {
-                "text": "talk to our team",
-                "slots": []
-              }
-            ],
-            "slots": []
-          },
-          {
-            "key": "VF.STOP",
-            "name": "VF.STOP",
-            "inputs": [
-              {
-                "text": "stop"
-              },
-              {
-                "text": "bye",
-                "slots": []
-              },
-              {
-                "text": "hang up",
-                "slots": []
-              },
-              {
-                "text": "good bye",
-                "slots": []
-              },
-              {
-                "text": "end call",
-                "slots": []
-              },
-              {
-                "text": "terminate",
-                "slots": []
-              }
-            ],
-            "slots": []
-          },
-          {
-            "key": "capture_userName_ocagmoa",
-            "name": "capture_userName_ocagmoa",
-            "inputs": [],
-            "slots": [
-              {
-                "id": "ra1gi37r5",
-                "required": true,
-                "dialog": {
-                  "prompt": [],
-                  "confirm": [],
-                  "utterances": [
-                    {
-                      "text": "{{[userName].ra1gi37r5}}",
-                      "slots": [
-                        "ra1gi37r5"
-                      ]
-                    }
-                  ],
-                  "confirmEnabled": false
-                }
-              }
-            ]
-          }
-        ],
-        "slots": [
-          {
-            "key": "ra1gi37r5",
-            "name": "userName",
-            "type": {
-              "value": "VF.NAME"
-            },
-            "color": "#56b365",
-            "inputs": []
-          }
-        ]
-      }
-    },
-    "createdAt": "2023-05-27T11:20:52.000Z"
-  },
   "version": {
-    "_id": "6471e79338c303b183e9ef2e",
     "variables": [
       "sessions",
       "user_id",
@@ -398,9 +165,8 @@
       },
       "platform": "webchat"
     },
-    "_version": 4.07,
+    "_version": 8,
     "name": "Initial Version",
-    "projectID": "6471e794dacc180006503568",
     "manualSave": false,
     "autoSaveFromRestore": false,
     "topics": [
@@ -410,20 +176,6 @@
       }
     ],
     "components": [],
-    "rootDiagramID": "6471e79438c303b183e9ef2f",
-    "domains": [
-      {
-        "id": "cla06iyr900b206pkh8d4ap8n",
-        "name": "Home",
-        "live": true,
-        "topicIDs": [
-          "6471e79438c303b183e9ef2f"
-        ],
-        "rootDiagramID": "6471e79438c303b183e9ef2f",
-        "updatedAt": "2023-05-30T18:56:56.146Z",
-        "updatedBy": 3600
-      }
-    ],
     "canvasTemplates": [
       {
         "id": "sg9zy34i0",
@@ -459,7 +211,6 @@
       }
     ],
     "creatorID": 3600,
-    "templateDiagramID": "6471e79438c303b183e9ef30",
     "prototype": {
       "type": "chat",
       "data": {
@@ -690,21 +441,36 @@
       },
       "settings": {},
       "platform": "webchat"
-    }
+    },
+    "_id": "6471e79338c303b183e9ef2e",
+    "domains": [
+      {
+        "id": "cla06iyr900b206pkh8d4ap8n",
+        "name": "Home",
+        "live": true,
+        "topicIDs": [
+          "6471e79438c303b183e9ef2f"
+        ],
+        "rootDiagramID": "6471e79438c303b183e9ef2f",
+        "updatedBy": 3600,
+        "updatedAt": "2023-05-30T18:56:56.146Z"
+      }
+    ],
+    "projectID": "6471e794dacc180006503568",
+    "rootDiagramID": "6471e79438c303b183e9ef2f",
+    "templateDiagramID": "6471e79438c303b183e9ef30"
   },
   "diagrams": {
     "6471e79438c303b183e9ef30": {
-      "_id": "6471e79438c303b183e9ef30",
       "name": "Template Diagram",
       "type": "TEMPLATE",
       "zoom": 100,
       "offsetX": 272,
-      "offsetY": 104,
+      "offsetY": 204,
       "modified": 1685186452,
       "variables": [],
       "menuItems": [],
       "creatorID": 3600,
-      "versionID": "6471e79338c303b183e9ef2e",
       "nodes": {
         "6438725334aead00076d562e": {
           "type": "start",
@@ -3809,16 +3575,16 @@
           "nodeID": "645d718f83103cca7a3cecd7"
         }
       },
-      "diagramID": "6471e79438c303b183e9ef30"
+      "_id": "6471e79438c303b183e9ef30",
+      "diagramID": "6471e79438c303b183e9ef30",
+      "versionID": "6471e79338c303b183e9ef2e"
     },
     "6471e79438c303b183e9ef2f": {
-      "_id": "6471e79438c303b183e9ef2f",
       "offsetX": 660.3784532606145,
-      "offsetY": 781.3489202677721,
+      "offsetY": 881.3489202677721,
       "zoom": 100,
       "variables": [],
       "name": "ROOT",
-      "versionID": "6471e79338c303b183e9ef2e",
       "creatorID": 3600,
       "modified": 1685186452,
       "intentStepIDs": [],
@@ -4672,7 +4438,8 @@
               "6471f175fe941ecf23ac0e06",
               "6471f17ffe941ecf23ac0e0a",
               "6471f189fe941ecf23ac0e0e",
-              "6471eb76fe941ecf23ac0d58"
+              "6659926f83818751f4adf6ff",
+              "665992cc83818751f4adf703"
             ],
             "color": "#56b365"
           },
@@ -4787,184 +4554,6 @@
             1096.5735464730544,
             216.23827980580052
           ]
-        },
-        "6471eb76fe941ecf23ac0d58": {
-          "type": "trace",
-          "data": {
-            "name": "DTMF",
-            "_v": 1,
-            "paths": [
-              {
-                "label": "1",
-                "isDefault": true
-              },
-              {
-                "label": "2",
-                "isDefault": false
-              },
-              {
-                "label": "3",
-                "isDefault": false
-              },
-              {
-                "label": "4",
-                "isDefault": false
-              }
-            ],
-            "payload": {
-              "name": "DTMF",
-              "body": "",
-              "isBlocking": false
-            },
-            "defaultPath": 0,
-            "portsV2": {
-              "byKey": {},
-              "builtIn": {},
-              "dynamic": [
-                {
-                  "type": "",
-                  "target": "6471e959fe941ecf23ac0cbb",
-                  "id": "6471eb76fe941ecf23ac0d59",
-                  "data": {
-                    "points": [
-                      {
-                        "point": [
-                          784.53,
-                          -23.44
-                        ]
-                      },
-                      {
-                        "point": [
-                          853.05,
-                          -23.44
-                        ]
-                      },
-                      {
-                        "point": [
-                          853.05,
-                          -704.97
-                        ]
-                      },
-                      {
-                        "point": [
-                          921.56,
-                          -704.97
-                        ],
-                        "allowedToTop": true
-                      }
-                    ],
-                    "color": "#56b365"
-                  }
-                },
-                {
-                  "id": "6471eb85fe941ecf23ac0d63",
-                  "type": "",
-                  "target": "6471e9cdfe941ecf23ac0cca",
-                  "data": {
-                    "points": [
-                      {
-                        "point": [
-                          784.53,
-                          31.06
-                        ]
-                      },
-                      {
-                        "point": [
-                          854.01,
-                          31.06
-                        ]
-                      },
-                      {
-                        "point": [
-                          854.01,
-                          -395.23
-                        ]
-                      },
-                      {
-                        "point": [
-                          923.48,
-                          -395.23
-                        ],
-                        "allowedToTop": true
-                      }
-                    ],
-                    "color": "#56b365"
-                  }
-                },
-                {
-                  "id": "6471eb86fe941ecf23ac0d65",
-                  "type": "",
-                  "target": "6471eaeafe941ecf23ac0d44",
-                  "data": {
-                    "points": [
-                      {
-                        "point": [
-                          784.53,
-                          85.56
-                        ]
-                      },
-                      {
-                        "point": [
-                          855.53,
-                          85.56
-                        ]
-                      },
-                      {
-                        "point": [
-                          855.53,
-                          -124.28
-                        ]
-                      },
-                      {
-                        "point": [
-                          926.52,
-                          -124.28
-                        ],
-                        "allowedToTop": true
-                      }
-                    ],
-                    "color": "#56b365"
-                  }
-                },
-                {
-                  "id": "6471eb89fe941ecf23ac0d67",
-                  "type": "",
-                  "target": "6471eb47fe941ecf23ac0d52",
-                  "data": {
-                    "points": [
-                      {
-                        "point": [
-                          784.53,
-                          140.06
-                        ]
-                      },
-                      {
-                        "point": [
-                          858.05,
-                          140.06
-                        ]
-                      },
-                      {
-                        "point": [
-                          858.05,
-                          243.24
-                        ]
-                      },
-                      {
-                        "point": [
-                          931.57,
-                          243.24
-                        ],
-                        "allowedToTop": true
-                      }
-                    ],
-                    "color": "#56b365"
-                  }
-                }
-              ]
-            }
-          },
-          "nodeID": "6471eb76fe941ecf23ac0d58"
         },
         "6471ebc4fe941ecf23ac0d6d": {
           "type": "intent",
@@ -5624,10 +5213,881 @@
             }
           },
           "nodeID": "64724119fe941ecf23ac0fa4"
+        },
+        "6659926f83818751f4adf6ff": {
+          "type": "text",
+          "data": {
+            "name": "Text",
+            "texts": [
+              {
+                "id": "rf3e63a1n",
+                "content": [
+                  {
+                    "children": [
+                      {
+                        "text": "Please tell me the option you're looking for or use the corresponding number followed by the # key."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "canvasVisibility": "preview",
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": null,
+                  "id": "6659926f83818751f4adf700"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "6659926f83818751f4adf6ff"
+        },
+        "665992cc83818751f4adf703": {
+          "type": "captureV2",
+          "data": {
+            "name": "Capture",
+            "intentScope": "GLOBAL",
+            "capture": {
+              "type": "query",
+              "variable": "last_utterance"
+            },
+            "noReply": null,
+            "noMatch": null,
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "next": {
+                  "type": "next",
+                  "target": "665992db83818751f4adf735",
+                  "id": "665992cc83818751f4adf704",
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          784.53,
+                          27.31
+                        ]
+                      },
+                      {
+                        "point": [
+                          808.53,
+                          27.31
+                        ]
+                      },
+                      {
+                        "point": [
+                          808.53,
+                          99.81
+                        ]
+                      },
+                      {
+                        "point": [
+                          618.66,
+                          99.81
+                        ]
+                      },
+                      {
+                        "point": [
+                          618.66,
+                          127.4
+                        ],
+                        "toTop": true,
+                        "allowedToTop": true
+                      }
+                    ],
+                    "color": "#56b365"
+                  }
+                },
+                "else": {
+                  "type": "else",
+                  "target": null,
+                  "id": "665992cc83818751f4adf705"
+                }
+              },
+              "dynamic": []
+            }
+          },
+          "nodeID": "665992cc83818751f4adf703"
+        },
+        "665992db83818751f4adf732": {
+          "type": "ifV2",
+          "data": {
+            "name": "If",
+            "expressions": [
+              {
+                "type": null,
+                "name": "1",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "contains",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "last_utterance"
+                      },
+                      {
+                        "type": "value",
+                        "value": "1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "and",
+                "name": "2",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "contains",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "last_utterance"
+                      },
+                      {
+                        "type": "value",
+                        "value": "2"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": null,
+                "name": "3",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "contains",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "last_utterance"
+                      },
+                      {
+                        "type": "value",
+                        "value": "3"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": null,
+                "name": "4",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "contains",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "last_utterance"
+                      },
+                      {
+                        "type": "value",
+                        "value": "4"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "noMatch": {
+              "type": "path",
+              "pathName": "Else"
+            },
+            "portsV2": {
+              "byKey": {},
+              "builtIn": {
+                "else": {
+                  "id": "6659937683818751f4adf742",
+                  "type": "else",
+                  "target": "6471ea64fe941ecf23ac0cea",
+                  "data": {
+                    "color": "#dc8879"
+                  }
+                }
+              },
+              "dynamic": [
+                {
+                  "type": "",
+                  "target": "6471e959fe941ecf23ac0cbb",
+                  "id": "665992db83818751f4adf733",
+                  "data": {
+                    "color": "#56b365"
+                  }
+                },
+                {
+                  "id": "6659934083818751f4adf73c",
+                  "type": "",
+                  "target": "6471e9cdfe941ecf23ac0cca",
+                  "data": {
+                    "color": "#56b365"
+                  }
+                },
+                {
+                  "id": "6659934283818751f4adf73e",
+                  "type": "",
+                  "target": "6471eaeafe941ecf23ac0d44",
+                  "data": {
+                    "color": "#56b365"
+                  }
+                },
+                {
+                  "id": "6659936383818751f4adf740",
+                  "type": "",
+                  "target": "6471eb47fe941ecf23ac0d52",
+                  "data": {
+                    "color": "#56b365"
+                  }
+                }
+              ]
+            }
+          },
+          "nodeID": "665992db83818751f4adf732",
+          "coords": [
+            0,
+            0
+          ]
+        },
+        "665992db83818751f4adf735": {
+          "type": "block",
+          "data": {
+            "name": "Check choice",
+            "steps": [
+              "665992db83818751f4adf732"
+            ],
+            "color": "#5b9fd7"
+          },
+          "nodeID": "665992db83818751f4adf735",
+          "coords": [
+            618.6602232350095,
+            127.39767479200083
+          ]
         }
       },
-      "diagramID": "6471e79438c303b183e9ef2f"
+      "_id": "6471e79438c303b183e9ef2f",
+      "diagramID": "6471e79438c303b183e9ef2f",
+      "versionID": "6471e79338c303b183e9ef2e"
     }
   },
+  "flows": [],
+  "entities": [
+    {
+      "id": "ra1gi37r5",
+      "name": "userName",
+      "createdByID": 3600,
+      "folderID": null,
+      "description": null,
+      "color": "#56b365",
+      "classifier": "VF.NAME",
+      "isArray": false,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    }
+  ],
+  "entityVariants": [],
+  "intents": [
+    {
+      "id": "VF.YES",
+      "name": "VF.YES",
+      "createdByID": 3600,
+      "folderID": null,
+      "description": null,
+      "automaticReprompt": false,
+      "entityOrder": [],
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "VF.NO",
+      "name": "VF.NO",
+      "createdByID": 3600,
+      "folderID": null,
+      "description": null,
+      "automaticReprompt": false,
+      "entityOrder": [],
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "yo2f73754",
+      "name": "More Info",
+      "createdByID": 3600,
+      "folderID": null,
+      "description": null,
+      "automaticReprompt": false,
+      "entityOrder": [],
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "0a2hi37ir",
+      "name": "Ask a Question",
+      "createdByID": 3600,
+      "folderID": null,
+      "description": null,
+      "automaticReprompt": false,
+      "entityOrder": [],
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "hr2k837o1",
+      "name": "Coupon",
+      "createdByID": 3600,
+      "folderID": null,
+      "description": null,
+      "automaticReprompt": false,
+      "entityOrder": [],
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "w22mp37qh",
+      "name": "Call Team",
+      "createdByID": 3600,
+      "folderID": null,
+      "description": null,
+      "automaticReprompt": false,
+      "entityOrder": [],
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "VF.STOP",
+      "name": "VF.STOP",
+      "createdByID": 3600,
+      "folderID": null,
+      "description": null,
+      "automaticReprompt": false,
+      "entityOrder": [],
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "None",
+      "name": "None",
+      "createdByID": 3600,
+      "folderID": null,
+      "description": null,
+      "automaticReprompt": false,
+      "entityOrder": [],
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    }
+  ],
+  "utterances": [
+    {
+      "id": "66597b45bcd4c6000744d837",
+      "text": [
+        {
+          "text": [
+            "about voiceflow"
+          ]
+        }
+      ],
+      "intentID": "yo2f73754",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d838",
+      "text": [
+        {
+          "text": [
+            "more info"
+          ]
+        }
+      ],
+      "intentID": "yo2f73754",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d839",
+      "text": [
+        {
+          "text": [
+            "answer my question"
+          ]
+        }
+      ],
+      "intentID": "0a2hi37ir",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d83a",
+      "text": [
+        {
+          "text": [
+            "I have a question"
+          ]
+        }
+      ],
+      "intentID": "0a2hi37ir",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d83b",
+      "text": [
+        {
+          "text": [
+            "ask a question"
+          ]
+        }
+      ],
+      "intentID": "0a2hi37ir",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d83c",
+      "text": [
+        {
+          "text": [
+            "coupon"
+          ]
+        }
+      ],
+      "intentID": "hr2k837o1",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d83d",
+      "text": [
+        {
+          "text": [
+            "I want a coupon"
+          ]
+        }
+      ],
+      "intentID": "hr2k837o1",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d83e",
+      "text": [
+        {
+          "text": [
+            "get a coupon"
+          ]
+        }
+      ],
+      "intentID": "hr2k837o1",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d83f",
+      "text": [
+        {
+          "text": [
+            "call"
+          ]
+        }
+      ],
+      "intentID": "w22mp37qh",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d840",
+      "text": [
+        {
+          "text": [
+            "contact someone"
+          ]
+        }
+      ],
+      "intentID": "w22mp37qh",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d841",
+      "text": [
+        {
+          "text": [
+            "talk to the team"
+          ]
+        }
+      ],
+      "intentID": "w22mp37qh",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d842",
+      "text": [
+        {
+          "text": [
+            "talk to our team"
+          ]
+        }
+      ],
+      "intentID": "w22mp37qh",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d843",
+      "text": [
+        {
+          "text": [
+            "bye"
+          ]
+        }
+      ],
+      "intentID": "VF.STOP",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d844",
+      "text": [
+        {
+          "text": [
+            "hang up"
+          ]
+        }
+      ],
+      "intentID": "VF.STOP",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d845",
+      "text": [
+        {
+          "text": [
+            "good bye"
+          ]
+        }
+      ],
+      "intentID": "VF.STOP",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d846",
+      "text": [
+        {
+          "text": [
+            "end call"
+          ]
+        }
+      ],
+      "intentID": "VF.STOP",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    },
+    {
+      "id": "66597b45bcd4c6000744d847",
+      "text": [
+        {
+          "text": [
+            "terminate"
+          ]
+        }
+      ],
+      "intentID": "VF.STOP",
+      "language": "en-us",
+      "createdAt": "2024-05-31T07:24:54.000Z"
+    }
+  ],
+  "requiredEntities": [],
+  "folders": [],
+  "responses": [],
+  "responseVariants": [],
+  "responseAttachments": [],
+  "responseDiscriminators": [],
+  "variables": [
+    {
+      "id": "sessions",
+      "name": "sessions",
+      "createdByID": 3600,
+      "folderID": null,
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "number",
+      "description": "The number of times a particular user has opened the app.",
+      "defaultValue": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "user_id",
+      "name": "user_id",
+      "createdByID": 3600,
+      "folderID": null,
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "The user's unique ID.",
+      "defaultValue": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "timestamp",
+      "name": "timestamp",
+      "createdByID": 3600,
+      "folderID": null,
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "UNIX timestamp (number of seconds since January 1st, 1970 at UTC).",
+      "defaultValue": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "platform",
+      "name": "platform",
+      "createdByID": 3600,
+      "folderID": null,
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "The platform your agent is running on (e.g. \"voiceflow\").",
+      "defaultValue": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "locale",
+      "name": "locale",
+      "createdByID": 3600,
+      "folderID": null,
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "The locale of the user (eg. en-US, en-CA, it-IT, fr-FR, ...).",
+      "defaultValue": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "intent_confidence",
+      "name": "intent_confidence",
+      "createdByID": 3600,
+      "folderID": null,
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "number",
+      "description": "The confidence interval (measured as a value from 0 to 100) for the most recently matched intent.",
+      "defaultValue": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "last_response",
+      "name": "last_response",
+      "createdByID": 3600,
+      "folderID": null,
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "The agent's last response (text/speak) in a string.",
+      "defaultValue": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "last_event",
+      "name": "last_event",
+      "createdByID": 3600,
+      "folderID": null,
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "any",
+      "description": "The object containing the last event that the user client has triggered.",
+      "defaultValue": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "last_utterance",
+      "name": "last_utterance",
+      "createdByID": 3600,
+      "folderID": null,
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "The user's last utterance in a text string.",
+      "defaultValue": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "vf_memory",
+      "name": "vf_memory",
+      "createdByID": 3600,
+      "folderID": null,
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "Last 10 user inputs and agent responses in a string (e.g. \"agent: How can i help?\"\nuser: What's the weather today?).",
+      "defaultValue": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    },
+    {
+      "id": "vf_chunks",
+      "name": "vf_chunks",
+      "createdByID": 3600,
+      "folderID": null,
+      "color": "#515A63",
+      "isArray": true,
+      "isSystem": true,
+      "datatype": "any",
+      "description": "Dynamically stores the last chunks retrieved from the Knowledge Base whenever calling the KB from the canvas.",
+      "defaultValue": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T07:24:54.000Z",
+      "updatedByID": 3600
+    }
+  ],
+  "workflows": [
+    {
+      "id": "66597b45bcd4c6000744d848",
+      "name": "Home",
+      "createdByID": 3600,
+      "folderID": null,
+      "status": null,
+      "isStart": true,
+      "diagramID": "6471e79438c303b183e9ef2f",
+      "assigneeID": null,
+      "description": null,
+      "createdAt": "2024-05-31T07:24:54.000Z",
+      "updatedAt": "2024-05-31T09:10:37.000Z",
+      "updatedByID": 3600
+    }
+  ],
+  "attachments": [],
+  "cardButtons": [],
+  "functions": [],
+  "functionPaths": [],
+  "functionVariables": [],
+  "project": {
+    "name": "Twilio IVR Demo",
+    "teamID": "peEqrGWwkD",
+    "platform": "webchat",
+    "type": "chat",
+    "platformData": {
+      "invocationName": "template project general"
+    },
+    "members": [],
+    "linkType": "STRAIGHT",
+    "image": "https://cm4-production-assets.s3.amazonaws.com/1685209113014-twilio-logo-png-transparent.png",
+    "customThemes": [
+      {
+        "name": "Text",
+        "palette": {
+          "50": "#f6eaf5",
+          "100": "#f1ddee",
+          "200": "#eacbe6",
+          "300": "#e4bade",
+          "400": "#d99dd1",
+          "500": "#cf80c5",
+          "600": "#ba66af",
+          "700": "#94508b",
+          "800": "#6c3966",
+          "900": "#442240"
+        },
+        "standardColor": "#cf80c5"
+      }
+    ],
+    "apiPrivacy": "public",
+    "aiAssistSettings": {
+      "aiPlayground": true
+    },
+    "_version": 1.2,
+    "creatorID": 3600,
+    "updatedBy": 3600,
+    "_id": "6471e794dacc180006503568",
+    "updatedAt": "2024-05-31T09:08:50.148Z",
+    "knowledgeBase": {
+      "settings": {
+        "chunkStrategy": {
+          "type": "recursive_text_splitter",
+          "size": 1200,
+          "overlap": 200
+        },
+        "search": {
+          "limit": 3,
+          "metric": "IP"
+        },
+        "summarization": {
+          "prompt": "",
+          "mode": "prompt",
+          "model": "gpt-3.5-turbo",
+          "temperature": 0.1,
+          "system": "You are an FAQ AI chat assistant. Information will be provided to help answer the user's questions. Always summarize your response to be as brief as possible and be extremely concise. Your responses should be fewer than a couple of sentences.",
+          "maxTokens": 150
+        }
+      },
+      "documents": {
+        "6471eaafdf06c90007e86c19": {
+          "status": {
+            "type": "SUCCESS"
+          },
+          "data": {
+            "type": "url",
+            "name": "voiceflow.com/about",
+            "url": "https://www.voiceflow.com/about"
+          },
+          "updatedAt": "2023-05-27T11:34:07.437Z",
+          "creatorID": 3600,
+          "documentID": "6471eaafdf06c90007e86c19",
+          "version": 0.2
+        }
+      }
+    },
+    "devVersion": "6471e79338c303b183e9ef2e"
+  },
+  "_version": "1.2",
   "variableStates": []
 }

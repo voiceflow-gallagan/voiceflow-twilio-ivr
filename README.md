@@ -2,7 +2,7 @@
 
 ### Use Voiceflow Dialog Manager API to run a Twilio IVR
 
-VR stands for Interactive Voice Response. It is a technology that enables a computer system to interact with callers through voice and DTMF (Dual-Tone Multi-Frequency) keypad inputs. IVR systems are widely used for automating telephony services, allowing customers to access information or navigate through menus without the need for a human operator.
+IVR stands for Interactive Voice Response. It is a technology that enables a computer system to interact with callers through voice and DTMF (Dual-Tone Multi-Frequency) keypad inputs. IVR systems are widely used for automating telephony services, allowing customers to access information or navigate through menus without the need for a human operator.
 
 With this integration you will be able to run your Voiceflow Assistant with Twilio Voice service.
 The main feature covered in the code are:
@@ -150,7 +150,7 @@ Do not forget to **save** your configuration
 ## Testing
 
 You’re now ready!
-You can import the Twilio_IVR_Demo-2023-11-21_15-55.vf file in Voiceflow to test it.
+You can import the Twilio_IVR_Demo-2024-05-31_11-10.vf file in Voiceflow to test it.
 Simply call your **Twilio number** and start interacting with your Assistant.
 
 

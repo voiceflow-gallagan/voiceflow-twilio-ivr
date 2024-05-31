@@ -41,10 +41,10 @@ async function interact(caller, action) {
     ? twiml
     : twiml.gather({
         input: 'speech dtmf', // 'speech',
-        numDigits: 1,
+        numDigits: 8, // Set max digits + 1 if you want extra validation with #
         action: '/ivr/interaction',
         profanityFilter: false,
-        actionOnEmptyResult: false,
+        actionOnEmptyResult: true,
         speechModel: 'phone_call', // 'experimental_utterances', 'experimental_conversations', ...
         enhanced: false,
         speechTimeout: 'auto',
@@ -128,12 +128,14 @@ exports.launch = async (called, caller) => {
 exports.interaction = async (called, caller, query = '', digit = null) => {
   let action = null
   if (digit) {
-    action = { type: `${digit}` }
+    // action = { type: `${digit}` } | Removing the need for a Custom Action
+    action = digit ? { type: 'text', payload: digit } : null
     console.log('Digit:', digit)
   } else {
     action = query.trim() ? { type: 'text', payload: query } : null
     console.log('Utterance:', query)
   }
+
   return interact(caller, action)
 }
 
