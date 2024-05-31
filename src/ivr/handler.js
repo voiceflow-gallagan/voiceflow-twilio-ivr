@@ -7,10 +7,20 @@ const {
   TWILIO_PHONE_NUMBER,
   TWILIO_ACCOUNT_SID,
   TWILIO_AUTH_TOKEN,
+  TWILIO_API_KEY,
+  TWILIO_API_SECRET,
 } = process.env
 
 const VoiceResponse = require('twilio').twiml.VoiceResponse
+// Using Auth Tokens
 const SMS = require('twilio')(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
+
+// Using API Key instead of Auth Tokens
+/*
+const SMS = require('twilio')(TWILIO_API_KEY, TWILIO_API_SECRET, {
+  accountSid: TWILIO_ACCOUNT_SID,
+})
+*/
 const axios = require('axios')
 const VOICEFLOW_VERSION_ID = process.env.VOICEFLOW_VERSION_ID || 'development'
 const VOICEFLOW_PROJECT_ID = process.env.VOICEFLOW_PROJECT_ID || null
