@@ -120,7 +120,7 @@ async function interact(caller, action) {
         break
       }
       case 'end': {
-        saveTranscript(caller)
+        saveTranscript(caller, true)
         twiml.hangup()
         break
       }
@@ -128,6 +128,7 @@ async function interact(caller, action) {
       }
     }
   }
+  saveTranscript(caller, false)
   return twiml.toString()
 }
 
@@ -170,7 +171,7 @@ function createSession() {
   return session_id
 }
 
-async function saveTranscript(username) {
+async function saveTranscript(username, isEnd) {
   if (VOICEFLOW_PROJECT_ID) {
     console.log('SAVE TRANSCRIPT')
     if (!username || username == '' || username == undefined) {
@@ -199,7 +200,9 @@ async function saveTranscript(username) {
     })
       .then(function (response) {
         console.log('Saved!')
-        session = `${process.env.VOICEFLOW_VERSION_ID}.${createSession()}`
+        if (isEnd == true) {
+          session = `${process.env.VOICEFLOW_VERSION_ID}.${createSession()}`
+        }
       })
       .catch((err) => console.log(err))
   }
