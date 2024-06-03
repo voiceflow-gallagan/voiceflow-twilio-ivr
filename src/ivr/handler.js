@@ -233,7 +233,7 @@ async function saveTranscript(username, isEnd) {
         if (isEnd == true) {
           if (RESET_STATE === 'true') {
             console.log('Resetting state')
-            deleteState(Caller)
+            deleteUserState(Caller)
           }
           session = `${process.env.VOICEFLOW_VERSION_ID}.${createSession()}`
         }
@@ -243,7 +243,7 @@ async function saveTranscript(username, isEnd) {
     if (isEnd == true) {
       if (RESET_STATE === 'true') {
         console.log('Resetting state')
-        deleteState(Caller)
+        deleteUserState(Caller)
       }
       session = `${process.env.VOICEFLOW_VERSION_ID}.${createSession()}`
     }
