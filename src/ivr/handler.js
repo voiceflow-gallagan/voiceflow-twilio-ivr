@@ -44,7 +44,6 @@ async function interact(caller, action) {
   }
   const response = await axios(request)
 
-  // janky first pass
   const endTurn = response.data.some((trace) =>
     ['CALL', 'end'].includes(trace.type)
   )
@@ -125,7 +124,7 @@ async function interact(caller, action) {
         break
       }
       case 'end': {
-        // saveTranscript(caller, true)
+        saveTranscript(caller, true)
         twiml.hangup()
         break
       }
@@ -133,9 +132,7 @@ async function interact(caller, action) {
       }
     }
   }
-  if (endTurn === true) {
-    saveTranscript(caller, true)
-  } else {
+  if (endTurn === false) {
     saveTranscript(caller, false)
   }
 
