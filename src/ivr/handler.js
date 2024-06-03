@@ -25,6 +25,7 @@ const axios = require('axios')
 const VOICEFLOW_VERSION_ID = process.env.VOICEFLOW_VERSION_ID || 'development'
 const VOICEFLOW_PROJECT_ID = process.env.VOICEFLOW_PROJECT_ID || null
 let session = `${VOICEFLOW_VERSION_ID}.${createSession()}`
+const RESET_STATE = process.env.RESET_STATE.toLowerCase() || 'false'
 
 async function interact(caller, action) {
   const twiml = new VoiceResponse()
@@ -124,7 +125,7 @@ async function interact(caller, action) {
         break
       }
       case 'end': {
-        saveTranscript(caller, true)
+        // saveTranscript(caller, true)
         twiml.hangup()
         break
       }
@@ -132,7 +133,12 @@ async function interact(caller, action) {
       }
     }
   }
-  saveTranscript(caller, false)
+  if (endTurn === true) {
+    saveTranscript(caller, true)
+  } else {
+    saveTranscript(caller, false)
+  }
+
   return twiml.toString()
 }
 
@@ -225,9 +231,21 @@ async function saveTranscript(username, isEnd) {
       .then(function (response) {
         console.log('Saved!')
         if (isEnd == true) {
+          if (RESET_STATE === 'true') {
+            console.log('Resetting state')
+            deleteState(Caller)
+          }
           session = `${process.env.VOICEFLOW_VERSION_ID}.${createSession()}`
         }
       })
       .catch((err) => console.log(err))
+  } else {
+    if (isEnd == true) {
+      if (RESET_STATE === 'true') {
+        console.log('Resetting state')
+        deleteState(Caller)
+      }
+      session = `${process.env.VOICEFLOW_VERSION_ID}.${createSession()}`
+    }
   }
 }
