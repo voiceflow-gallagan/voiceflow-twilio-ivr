@@ -132,6 +132,20 @@ async function interact(caller, action) {
   return twiml.toString()
 }
 
+async function deleteUserState(caller) {
+  // call the Voiceflow API with the user's ID
+  const request = {
+    method: 'DELETE',
+    url: `https://general-runtime.voiceflow.com/state/user/${encodeURI(
+      caller
+    )}`,
+    headers: { Authorization: VOICEFLOW_API_KEY, sessionid: session },
+    data: { action, config: { stopTypes: ['DTMF'] } },
+  }
+  const response = await axios(request)
+  return response
+}
+
 exports.launch = async (called, caller) => {
   return interact(caller, { type: 'launch' })
 }
@@ -148,6 +162,10 @@ exports.interaction = async (called, caller, query = '', digit = null) => {
   }
 
   return interact(caller, action)
+}
+
+exports.deleteState = async (caller) => {
+  return deleteUserState(caller)
 }
 
 function createSession() {

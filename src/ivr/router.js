@@ -1,12 +1,20 @@
+require('dotenv').config()
 const path = require('path')
 const Router = require('express').Router
-const { launch, interaction, dial } = require('./handler')
+const { launch, interaction, deleteState } = require('./handler')
+
+const RESET_STATE = process.env.RESET_STATE.toLowerCase() || 'false'
 
 const router = new Router()
 
 router.post('/interaction', async (req, res) => {
-  const { Called, Caller, SpeechResult, Digits } = req.body
-  res.send(await interaction(Called, Caller, SpeechResult, Digits))
+  const { Called, Caller, SpeechResult, Digits, CallStatus } = req.body
+
+  if (CallStatus == 'completed' && RESET_STATE === 'true') {
+    deleteState(Caller)
+  } else {
+    res.send(await interaction(Called, Caller, SpeechResult, Digits))
+  }
 })
 
 router.post('/launch', async (req, res) => {
