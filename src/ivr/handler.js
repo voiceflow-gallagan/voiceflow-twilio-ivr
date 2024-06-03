@@ -120,7 +120,6 @@ async function interact(caller, action) {
           .catch((error) => {
             console.error('Error sending message:', error)
           })
-        saveTranscript(caller)
         break
       }
       case 'end': {
@@ -230,7 +229,7 @@ async function saveTranscript(username, isEnd) {
         if (isEnd == true) {
           if (RESET_STATE === 'true') {
             console.log('Resetting state')
-            deleteUserState(Caller)
+            deleteUserState(username)
           }
           session = `${process.env.VOICEFLOW_VERSION_ID}.${createSession()}`
         }
@@ -240,7 +239,7 @@ async function saveTranscript(username, isEnd) {
     if (isEnd == true) {
       if (RESET_STATE === 'true') {
         console.log('Resetting state')
-        deleteUserState(Caller)
+        deleteUserState(username)
       }
       session = `${process.env.VOICEFLOW_VERSION_ID}.${createSession()}`
     }
