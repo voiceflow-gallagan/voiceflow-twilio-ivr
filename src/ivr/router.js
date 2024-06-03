@@ -11,6 +11,7 @@ router.post('/interaction', async (req, res) => {
   const { Called, Caller, SpeechResult, Digits, CallStatus } = req.body
 
   if (CallStatus == 'completed' && RESET_STATE === 'true') {
+    console.log('Resetting state')
     deleteState(Caller)
   } else {
     res.send(await interaction(Called, Caller, SpeechResult, Digits))

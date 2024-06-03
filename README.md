@@ -103,6 +103,9 @@ Voiceflow project version ID (only for transcripts, default to 'production')
 **VOICEFLOW_PROJECT_ID**
 Voiceflow project ID (only for transcripts, default to null)
 
+**RESET_STATE**
+Set this to TRUE if you want to reset state after each call.
+
 In the **Secrets tab**, you can click on Edit as JSON button and paste the following JSON (do not forget to update the keys values):
 
 ![CleanShot 2023-05-27 at 15.40.05.png](images/CleanShot_2023-05-27_at_15.40.05.png)
@@ -115,7 +118,8 @@ In the **Secrets tab**, you can click on Edit as JSON button and paste the follo
 	"VOICEFLOW_API_URL": "https://general-runtime.voiceflow.com",
 	"VOICEFLOW_API_KEY": "VF.DM.XXX",
 	"VOICEFLOW_VERSION_ID": "XXX",
-	"VOICEFLOW_PROJECT_ID": "XXX"
+	"VOICEFLOW_PROJECT_ID": "XXX",
+	"RESET_STATE": "FALSE"
 }
 
 ```
