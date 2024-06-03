@@ -34,7 +34,11 @@ async function interact(caller, action) {
     url: `https://general-runtime.voiceflow.com/state/user/${encodeURI(
       caller
     )}/interact`,
-    headers: { Authorization: VOICEFLOW_API_KEY, sessionid: session },
+    headers: {
+      Authorization: VOICEFLOW_API_KEY,
+      sessionID: session,
+      versionID: VOICEFLOW_VERSION_ID,
+    },
     data: { action, config: { stopTypes: ['DTMF'] } },
   }
   const response = await axios(request)
@@ -139,8 +143,10 @@ async function deleteUserState(caller) {
     url: `https://general-runtime.voiceflow.com/state/user/${encodeURI(
       caller
     )}`,
-    headers: { Authorization: VOICEFLOW_API_KEY, sessionid: session },
-    data: { action, config: { stopTypes: ['DTMF'] } },
+    headers: {
+      Authorization: VOICEFLOW_API_KEY,
+      versionID: VOICEFLOW_VERSION_ID,
+    },
   }
   const response = await axios(request)
   return response
