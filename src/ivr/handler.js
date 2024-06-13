@@ -56,11 +56,13 @@ async function interact(caller, action) {
     : twiml.gather({
         input: 'speech dtmf', // 'speech',
         numDigits: 8, // Set max digits + 1 if you want extra validation with #
+        finishOnKey: '#',
+        hints: 'I need to check my account, Tico, Voiceflow, NiKo, yes',
         action: '/ivr/interaction',
         profanityFilter: false,
         actionOnEmptyResult: true,
-        speechModel: 'phone_call', // 'experimental_utterances', 'experimental_conversations', ...
-        enhanced: false,
+        speechModel: 'experimental_conversations', // 'phone_call', 'numbers_and_commands','experimental_utterances', 'experimental_conversations', ...
+        enhanced: true,
         speechTimeout: 'auto',
         language: 'en-US',
         method: 'POST',

@@ -1,0 +1,11 @@
+{
+  "name": "Node.js & Twilio Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint"]
+    }
+  },
+  "postCreateCommand": "npm install",
+  "forwardPorts": ["${localEnv:PORT}"]
+}
